@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>My First React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const [snakesArray, setSnakesArray] = React.useState(["snake", "snake", "snake"]);
+        const [counter, setCounter] = React.useState(0)
+
+        // const snakesArray = ["snake"];
+        // const setsnakesArray = (value) => {
+        //   snakesArray = value;
+
+        //   // re-render the page
+        // }
+
+        // const state = {
+        //   snakesArray: ["snake"]
+        // }
+
+        return (
+          // Fragments
+          <> 
+            <h1>Snakes</h1>
+
+            <h2>{counter}</h2>
+
+            <button onClick={() => {
+              setCounter(counter + 1);
+              // counter = counter + 1;
+              // const h2 = document.querySelector(`h2`);
+              // h2.innerText = counter;
+            }}>Add 1 to counter</button>
+          </>
+        )
+      }
+      
+      const container = document.querySelector(`#app`);
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+
+
+    <script>
+      const people = [`Sammy`, `Suzie`, `Lila`];
+
+      const [myFavorite, awesomePerson, bestestBuddy, leastfavorite] = people;
+      // const favorite = people[0];
+      // const awesomePerson = people[1];
+      // const bestestBuddy = people[2];
+
+      // console.log(myFavorite);
+
+    </script>
+
+
+  </body>
+</html>
